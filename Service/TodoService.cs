@@ -24,13 +24,6 @@ namespace TodoAPI.Service
         public async Task<List<Todo>> getTodoList()
         {
             List<Todo> todolist = new List<Todo>();
-            // if (!File.Exists(path))
-            // {
-            //     File.Create(path).Close();
-
-            // }
-            // else
-            // {
             try
             {
                 string[] lines = File.ReadAllLines(path);
@@ -52,12 +45,6 @@ namespace TodoAPI.Service
             {
                 File.Create(path).Close();
             }
-
-
-
-
-
-
             return todolist;
         }
     }

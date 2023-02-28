@@ -23,7 +23,7 @@ namespace TodoAPI.Controllers
         [HttpPost]
         public async Task <IActionResult> addTodo([FromBody] Todo todo)
         {
-            var checkAdd = _TodoService.addTodo(todo);
+            var checkAdd =  await _TodoService.addTodo(todo);
             return Ok(checkAdd);
         }
 
@@ -31,7 +31,7 @@ namespace TodoAPI.Controllers
         [HttpGet]
         public async Task <IActionResult> GetTodoList()
         {
-            var todoList = _TodoService.getTodoList();
+            var todoList = await _TodoService.getTodoList();
             return Ok(todoList);
         }
     
